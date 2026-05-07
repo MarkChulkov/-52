@@ -1,0 +1,13 @@
+# 1. Создать GUI (tkinter)
+# 2. Получить username из поля ввода
+if not username:  # проверка на пустоту
+    return error
+
+# 3. Запрос к API
+response = requests.get(f"https://api.github.com/users/{username}")
+
+# 4. Сохранить в JSON
+with open("favorites.json", "w") as f:
+    json.dump(favorites, f)
+
+# 5. Показать результаты в Listbox
